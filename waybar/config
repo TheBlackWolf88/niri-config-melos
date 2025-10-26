@@ -1,0 +1,64 @@
+{
+    "layer": "top",
+    "modules-left": ["custom/niriwindow"],
+    "modules-center" : [],
+    "modules-right": ["network", "wireplumber","battery", "hyprland/language", "clock", "tray"],
+    "hyprland/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "timezone": "Europe/Budapest",
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "tray": {
+    	"icon-size": 21,
+    	"spacing": 10
+    },
+    "network": {
+	"interface": "wlp3s0",
+	"format": "{ifname}",
+	"format-wifi": "{essid} ({signalStrength}%) ",
+	"format-ethernet": "{ipaddr}/{cidr} 󰊗",
+	"format-disconnected": "", //An empty format will hide the module.
+	"tooltip-format": "{ifname} via {gwaddr} 󰊗",
+	"tooltip-format-wifi": "{ipaddr}",
+	"tooltip-format-ethernet": "{ifname} ",
+	"tooltip-format-disconnected": "Disconnected",
+	"max-length": 50
+    },
+    
+    "wireplumber": {
+	"format": "{volume}% {icon}",
+	"format-muted": "",
+	"format-icons": ["", "", ""]
+    },
+
+    "custom/splash": {
+        "exec": "hyprctl splash",
+        "interval": "once",
+        "tooltip": false,
+    },
+
+     "hyprland/language": {
+
+        "format": "{}",
+
+        "format-hu": "HU",
+
+        "format-en": "US",
+
+    },
+
+    "custom/niriwindow": {
+        "exec": "$HOME/.config/waybar/scripts/niri-window.sh",
+        "return-type": "json",
+        "max-length": 50,
+        "escape": true,
+        "format": "    {}"
+    },
+}
+
